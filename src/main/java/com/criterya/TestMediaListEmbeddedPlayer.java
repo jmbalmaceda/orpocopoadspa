@@ -9,7 +9,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import uk.co.caprica.vlcj.binding.internal.libvlc_media_t;
-import uk.co.caprica.vlcj.discovery.NativeDiscovery;
 import uk.co.caprica.vlcj.medialist.MediaList;
 import uk.co.caprica.vlcj.player.MediaPlayerFactory;
 import uk.co.caprica.vlcj.player.embedded.EmbeddedMediaPlayer;
@@ -17,9 +16,12 @@ import uk.co.caprica.vlcj.player.list.MediaListPlayer;
 import uk.co.caprica.vlcj.player.list.MediaListPlayerEventAdapter;
 import uk.co.caprica.vlcj.player.list.MediaListPlayerMode;
 
+import com.sun.jna.NativeLibrary;
+
 public class TestMediaListEmbeddedPlayer{
 
     public static void main(String[] args) throws Exception {
+    	NativeLibrary.addSearchPath("libvlc", "C:/Program Files/VideoLAN/VLC");
     	MediaPlayerFactory mediaPlayerFactory = new MediaPlayerFactory();
 
         Canvas canvas = new Canvas();
